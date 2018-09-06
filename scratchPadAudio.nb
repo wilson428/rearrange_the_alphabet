@@ -1,0 +1,210 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7584,        202]
+NotebookOptionsPosition[      6093,        167]
+NotebookOutlinePosition[      6447,        183]
+CellTagsIndexPosition[      6404,        180]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}]}], "Code",
+ CellChangeTimes->{{3.7451649178652477`*^9, 3.745164935536112*^9}},
+ CellLabel->
+  "In[308]:=",ExpressionUUID->"f608bfcd-24d7-4fa2-be9f-8c6180570332"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"twinkleWiki", " ", "=", " ", 
+   RowBox[{"WikipediaData", "[", 
+    RowBox[{
+    "\"\<Twinkle Twinkle Little Star\>\"", ",", " ", 
+     "\"\<ArticleWikicode\>\""}], "]"}]}], ";"}]], "Code",
+ CellChangeTimes->{
+  3.745165223671067*^9, 3.745165337133546*^9, 3.745165380428072*^9, {
+   3.74516594206787*^9, 3.745165947579134*^9}},
+ CellLabel->
+  "In[342]:=",ExpressionUUID->"2d51afa0-b4de-4ee3-bb07-86e0ef1e243b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StringTake", "[", 
+  RowBox[{"twinkleWiki", ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"2200", ",", " ", "2600"}], "}"}]}], "]"}]], "Code",
+ CellChangeTimes->{{3.745165802069128*^9, 3.745165879290978*^9}, 
+   3.7451659533083572`*^9},
+ CellLabel->
+  "In[343]:=",ExpressionUUID->"c13041c5-42af-4698-843a-2cac88388534"],
+
+Cell[BoxData["\<\"] (1782\[Dash]1866) in London in 1806:<ref \
+name=Opie1997>[[I. Opie and P. Opie]], ''The Oxford Dictionary of Nursery \
+Rhymes'' (Oxford University Press, 1951, 2nd edn., 1997), pp. \
+397\[Dash]8.</ref>\\n{{Listen|filename= Twinkle Twinkle Little Star \
+plain.ogg|title= Twinkle Twinkle Little Star (tune)|description =Tune for \
+''Twinkle Twinkle Little Star''}}\\n{{quote|<poem>\\nTwinkle, twinkle, little \
+star,\\nHow I wonder w\"\>"], "Output",
+ CellChangeTimes->{
+  3.745165804959903*^9, {3.745165839825593*^9, 3.7451658798449306`*^9}, 
+   3.7451659539161367`*^9},
+ CellLabel->
+  "Out[343]=",ExpressionUUID->"c9ee4398-42e7-4724-b630-94c02296387b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"oneLine", " ", "=", " ", 
+   RowBox[{"StringReplace", "[", 
+    RowBox[{
+     RowBox[{"StringTake", "[", 
+      RowBox[{"twinkleWiki", ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"2200", ",", " ", "2600"}], "}"}]}], "]"}], ",", " ", 
+     RowBox[{
+      RowBox[{"\"\<\\n\>\"", " ", "|", " ", "\"\<\\r\>\""}], " ", "\[Rule]", 
+      " ", "\"\<|\>\""}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{"filename", " ", "=", " ", 
+  RowBox[{"StringCases", "[", 
+   RowBox[{"oneLine", ",", " ", 
+    RowBox[{
+     RowBox[{
+     "RegularExpression", "[", "\"\<filename= ([A-z, ]*.ogg)\>\"", "]"}], " ",
+      "\[Rule]", " ", "\"\<$1\>\""}]}], "]"}]}]}], "Code",
+ CellChangeTimes->{{3.745165363241984*^9, 3.74516537332347*^9}, {
+  3.745165443977117*^9, 3.7451654573128767`*^9}, {3.745165588484415*^9, 
+  3.7451656092429523`*^9}, {3.7451656762605133`*^9, 3.745165676744911*^9}, {
+  3.745165712088682*^9, 3.745165730153142*^9}, {3.7451657802963133`*^9, 
+  3.745165794464018*^9}, {3.74516593065974*^9, 3.745165993673787*^9}, {
+  3.745166037441999*^9, 3.745166081270525*^9}, {3.74516644255997*^9, 
+  3.745166510613964*^9}, {3.7451665889412107`*^9, 3.745166838997141*^9}, {
+  3.745166872019432*^9, 3.745166907874858*^9}, {3.74516693805134*^9, 
+  3.745166940265826*^9}},
+ CellLabel->
+  "In[449]:=",ExpressionUUID->"165522db-e5dd-42f4-97bd-b4d763521a73"],
+
+Cell[BoxData[
+ RowBox[{"{", "\<\"Twinkle Twinkle Little Star plain.ogg\"\>", 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.745165719924541*^9, 3.745165731005521*^9}, {
+   3.745165781362543*^9, 3.745165794847233*^9}, {3.7451659600613403`*^9, 
+   3.745165994459775*^9}, {3.745166037781843*^9, 3.745166081677576*^9}, {
+   3.7451664330334377`*^9, 3.7451665109979067`*^9}, {3.745166602443358*^9, 
+   3.745166839391945*^9}, {3.745166872815983*^9, 3.745166908164834*^9}, 
+   3.745166940575501*^9},
+ CellLabel->
+  "Out[450]=",ExpressionUUID->"1feb7d87-353c-4ff5-81aa-46d72ffb5d98"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"filename", " ", "=", " ", 
+  RowBox[{"\"\<https://en.wikipedia.org/wiki/File:\>\"", " ", "<>", " ", 
+   RowBox[{"StringReplace", "[", 
+    RowBox[{"filename", ",", " ", 
+     RowBox[{"\"\< \>\"", " ", "\[Rule]", " ", "\"\<_\>\""}]}], 
+    "]"}]}]}]], "Code",
+ CellChangeTimes->{{3.745166913202796*^9, 3.745166949920228*^9}},
+ CellLabel->
+  "In[451]:=",ExpressionUUID->"9f2e528b-40e2-42fb-ae8d-030b3a1d61c2"],
+
+Cell[BoxData["\<\"https://en.wikipedia.org/wiki/File:Twinkle_Twinkle_Little_\
+Star_plain.ogg\"\>"], "Output",
+ CellChangeTimes->{3.745166951797453*^9},
+ CellLabel->
+  "Out[451]=",ExpressionUUID->"c9b42ef3-05ab-4f43-affa-47e047005a59"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Import", "[", 
+  RowBox[{"filename", ",", " ", "\"\<OGG\>\""}], "]"}]], "Code",
+ CellChangeTimes->{{3.7451669800174427`*^9, 3.7451669901059017`*^9}},
+ CellLabel->
+  "In[452]:=",ExpressionUUID->"4e66df8e-f9da-484e-9c93-7ce1dcc45a22"],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{3.7451669908590193`*^9},
+ CellLabel->
+  "Out[452]=",ExpressionUUID->"c6c6743c-6c70-4a19-ae24-6861a9e9223e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"WikipediaData", "[", 
+  "\"\<https://en.wikipedia.org/wiki/File:Twinkle_Twinkle_Little_Star_plain.\
+ogg\>\"", "]"}]], "Code",
+ CellChangeTimes->{{3.7451670716935997`*^9, 3.745167079429435*^9}},
+ CellLabel->
+  "In[453]:=",ExpressionUUID->"fa52d74f-afa1-4f48-a102-f9f39d585354"],
+
+Cell[BoxData[
+ RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]], "Output",
+ CellChangeTimes->{3.745167080729115*^9},
+ CellLabel->
+  "Out[453]=",ExpressionUUID->"52eca704-ce61-4e4f-8196-0a04f7163743"]
+}, Open  ]]
+},
+WindowSize->{808, 751},
+WindowMargins->{{12, Automatic}, {Automatic, 24}},
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 350, 8, 72, "Code",ExpressionUUID->"f608bfcd-24d7-4fa2-be9f-8c6180570332"],
+Cell[911, 30, 445, 11, 52, "Code",ExpressionUUID->"2d51afa0-b4de-4ee3-bb07-86e0ef1e243b"],
+Cell[CellGroupData[{
+Cell[1381, 45, 337, 8, 52, "Code",ExpressionUUID->"c13041c5-42af-4698-843a-2cac88388534"],
+Cell[1721, 55, 672, 11, 182, "Output",ExpressionUUID->"c9ee4398-42e7-4724-b630-94c02296387b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2430, 71, 1367, 29, 73, "Code",ExpressionUUID->"165522db-e5dd-42f4-97bd-b4d763521a73"],
+Cell[3800, 102, 570, 10, 34, "Output",ExpressionUUID->"1feb7d87-353c-4ff5-81aa-46d72ffb5d98"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4407, 117, 431, 9, 52, "Code",ExpressionUUID->"9f2e528b-40e2-42fb-ae8d-030b3a1d61c2"],
+Cell[4841, 128, 234, 4, 34, "Output",ExpressionUUID->"c9b42ef3-05ab-4f43-affa-47e047005a59"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5112, 137, 256, 5, 52, "Code",ExpressionUUID->"4e66df8e-f9da-484e-9c93-7ce1dcc45a22"],
+Cell[5371, 144, 161, 3, 34, "Output",ExpressionUUID->"c6c6743c-6c70-4a19-ae24-6861a9e9223e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5569, 152, 300, 6, 52, "Code",ExpressionUUID->"fa52d74f-afa1-4f48-a102-f9f39d585354"],
+Cell[5872, 160, 205, 4, 34, "Output",ExpressionUUID->"52eca704-ce61-4e4f-8196-0a04f7163743"]
+}, Open  ]]
+}
+]
+*)
+

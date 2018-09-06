@@ -1,0 +1,747 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     32015,        739]
+NotebookOptionsPosition[     27804,        658]
+NotebookOutlinePosition[     28180,        675]
+CellTagsIndexPosition[     28137,        672]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}], ";"}]], "Code",
+ CellChangeTimes->{{3.7451194175253973`*^9, 3.745119442943698*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"9adc813b-b255-4f52-8462-620024e0d576"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"twinkleWiki", " ", "=", " ", 
+   RowBox[{"WikipediaData", "[", 
+    RowBox[{
+    "\"\<Twinkle Twinkle Little Star\>\"", ",", " ", 
+     "\"\<ArticleWikicode\>\""}], "]"}]}], ";"}]], "Code",
+ CellChangeTimes->{{3.745112298688367*^9, 3.745112303751968*^9}, {
+   3.745112903956357*^9, 3.74511296984061*^9}, {3.745115291950611*^9, 
+   3.745115403282033*^9}, {3.745115502891596*^9, 3.7451155165434027`*^9}, 
+   3.7451156478415947`*^9, 3.7451195013085623`*^9, {3.745119581394565*^9, 
+   3.745119610809297*^9}, {3.74516590616474*^9, 3.745165907002635*^9}},
+ CellLabel->
+  "In[336]:=",ExpressionUUID->"d47b8b5d-2004-45c8-8eda-2a234f3d46a1"],
+
+Cell["Looks like the lyrics are in the XML-style tag <poem>", "Text",
+ CellChangeTimes->{{3.745119715530176*^9, 
+  3.7451197568651876`*^9}},ExpressionUUID->"04b39c0b-9f5a-4506-8b55-\
+cfdb2a6fc111"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StringTake", "[", 
+  RowBox[{"twinkleWiki", ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"2500", ",", "3500"}], "}"}]}], "]"}]], "Code",
+ CellChangeTimes->{{3.745119615991378*^9, 3.745119704459725*^9}, 
+   3.7451659141565657`*^9},
+ CellLabel->
+  "In[337]:=",ExpressionUUID->"309f37e8-0c1b-43bb-8eb2-ba1e79914e6e"],
+
+Cell[BoxData["\<\"ne for ''Twinkle Twinkle Little \
+Star''}}\\n{{quote|<poem>\\nTwinkle, twinkle, little star,\\nHow I wonder \
+what you are!\\nUp above the world so high,\\nLike a diamond in the \
+sky.\\n\\nWhen this blazing sun is gone,\\nWhen he<!--Please do not change \
+this to \\\"the\\\" - this is the version in the citation.--> nothing shines \
+upon,\\nThen you show your little light,\\nTwinkle, twinkle, through the \
+night.\\n\\nThen the traveller in the dark\\nThanks you for your tiny \
+spark;\\nHe could not see where to go,\\nIf you did not twinkle so.\\n\\nIn \
+the dark blue sky you keep,\\nAnd often through my curtains peep,\\nFor you \
+never shut your eye\\nTill the sun is in the sky.\\n\\nAs your bright and \
+tiny spark\\nLights the traveller in the dark,\\nThough I know not what you \
+are,\\nTwinkle, twinkle, little star.\\n</poem>}}\\n\\nThe lyrics from \
+\\\"The Star\\\" were first published with the tune in ''The Singing Master: \
+First Class Tune Book'' in 1838.<ref name=\\\"Cryer2009\\\"/>  Although \
+before, when it was just a folk song, there were only 4 verses<ref \
+name=\\\"Cryer2009\\\"/\"\>"], "Output",
+ CellChangeTimes->{{3.745119619771409*^9, 3.7451196322232018`*^9}, {
+   3.74511967709862*^9, 3.745119705252326*^9}, 3.745119759743808*^9, 
+   3.745165914831847*^9},
+ CellLabel->
+  "Out[337]=",ExpressionUUID->"938e3617-0d2d-4a87-b792-a603b2bae339"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"oneLine", " ", "=", " ", 
+   RowBox[{"StringReplace", "[", 
+    RowBox[{"twinkleWiki", ",", " ", 
+     RowBox[{
+      RowBox[{"\"\<\\n\>\"", " ", "|", " ", "\"\<\\r\>\""}], " ", "\[Rule]", 
+      " ", "\"\<|\>\""}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"poems", " ", "=", " ", 
+   RowBox[{"StringCases", "[", 
+    RowBox[{"oneLine", ",", " ", 
+     RowBox[{"RegularExpression", "[", "\"\<<poem>(.*?)</poem>\>\"", "]"}]}], 
+    "]"}]}], ";"}], "\n", 
+ RowBox[{"lyrics", " ", "=", " ", 
+  RowBox[{"StringReplace", "[", 
+   RowBox[{
+    RowBox[{"First", "@", "poems"}], ",", " ", 
+    RowBox[{
+     RowBox[{"RegularExpression", "[", "\"\<(<!--.*?-->|</?poem>)\>\"", "]"}],
+      " ", "\[Rule]", " ", "\"\<\>\""}]}], "]"}]}]}], "Code",
+ CellChangeTimes->{{3.745116539823185*^9, 3.745116576606017*^9}, {
+   3.745116612949154*^9, 3.745116670180892*^9}, {3.745116707573307*^9, 
+   3.745116752448304*^9}, {3.745116805809342*^9, 3.745116886270461*^9}, {
+   3.745116930845366*^9, 3.745116974465611*^9}, {3.745117063522214*^9, 
+   3.7451171269813423`*^9}, {3.74511715878983*^9, 3.745117191006486*^9}, {
+   3.745117245456121*^9, 3.745117407756391*^9}, {3.745117550318089*^9, 
+   3.74511757518114*^9}, {3.745117633091683*^9, 3.7451176370661783`*^9}, 
+   3.745117670309436*^9, {3.745119462212933*^9, 3.745119464794627*^9}, {
+   3.745119600206615*^9, 3.7451196012556257`*^9}, 3.7451659183642263`*^9},
+ CellLabel->
+  "In[338]:=",ExpressionUUID->"377fd17f-1c95-4b55-a2a3-d9e3fb596675"],
+
+Cell[BoxData["\<\"|Twinkle, twinkle, little star,|How I wonder what you \
+are!|Up above the world so high,|Like a diamond in the sky.||When this \
+blazing sun is gone,|When he nothing shines upon,|Then you show your little \
+light,|Twinkle, twinkle, through the night.||Then the traveller in the \
+dark|Thanks you for your tiny spark;|He could not see where to go,|If you did \
+not twinkle so.||In the dark blue sky you keep,|And often through my curtains \
+peep,|For you never shut your eye|Till the sun is in the sky.||As your bright \
+and tiny spark|Lights the traveller in the dark,|Though I know not what you \
+are,|Twinkle, twinkle, little star.|\"\>"], "Output",
+ CellChangeTimes->{
+  3.745116577286944*^9, {3.745116625234994*^9, 3.745116670943639*^9}, {
+   3.745116717454404*^9, 3.745116753087582*^9}, {3.745116821247471*^9, 
+   3.745116886871323*^9}, {3.745116938961203*^9, 3.745116974971941*^9}, {
+   3.7451171053127747`*^9, 3.745117127500998*^9}, {3.745117169622905*^9, 
+   3.745117191709797*^9}, {3.7451172818916197`*^9, 3.7451173570005703`*^9}, 
+   3.745117425310409*^9, {3.745117561251899*^9, 3.7451175933821793`*^9}, 
+   3.745117637885187*^9, 3.745117671225814*^9, {3.745119425911422*^9, 
+   3.745119449758094*^9}, 3.745119769111479*^9, 3.7451659193445787`*^9},
+ CellLabel->
+  "Out[340]=",ExpressionUUID->"77d1cc90-888d-40d6-b406-102a6ec948a8"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"stanzas", " ", "=", " ", 
+   RowBox[{"StringSplit", "[", 
+    RowBox[{"lyrics", ",", " ", 
+     RowBox[{"RegularExpression", "[", "\"\<\\|{2}\>\"", "]"}]}], "]"}]}], 
+  ";"}]], "Code",
+ CellChangeTimes->{{3.745117197986185*^9, 3.7451172226722507`*^9}, {
+  3.7451174321398907`*^9, 3.745117464837803*^9}, {3.745117505025591*^9, 
+  3.745117533789502*^9}},
+ CellLabel->"In[27]:=",ExpressionUUID->"77e24601-87ea-43b8-a285-9347b6ae3b98"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"firstStanza", " ", "=", " ", 
+  RowBox[{"First", "@", "stanzas"}]}]], "Code",
+ CellChangeTimes->{{3.745120001240736*^9, 3.7451200084213133`*^9}},
+ CellLabel->"In[30]:=",ExpressionUUID->"cf6ed1bc-4c44-4257-a946-95452ddf4ca8"],
+
+Cell[BoxData["\<\"|Twinkle, twinkle, little star,|How I wonder what you \
+are!|Up above the world so high,|Like a diamond in the sky.\"\>"], "Output",
+ CellChangeTimes->{3.745120008878146*^9},
+ CellLabel->"Out[30]=",ExpressionUUID->"0c8e6d13-2e15-44b8-ac6f-45b2973f219c"]
+}, Open  ]],
+
+Cell["Let\[CloseCurlyQuote]s identify the pauses at the end of a line", "Text",
+ CellChangeTimes->{{3.7451200141616*^9, 
+  3.745120026600518*^9}},ExpressionUUID->"76118899-24c4-46f2-a182-\
+d5360eeea7bf"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"firstStanzaSung", " ", "=", " ", 
+  RowBox[{"StringReplace", "[", 
+   RowBox[{"firstStanza", ",", " ", 
+    RowBox[{
+     RowBox[{"RegularExpression", "[", "\"\<(,\\\\|)|(!\\\\|)\>\"", "]"}], 
+     " ", "\[Rule]", " ", "\"\< [beat],|\>\""}]}], "]"}]}]], "Code",
+ CellChangeTimes->{{3.7451200304152*^9, 3.745120151099883*^9}, {
+  3.74512109436512*^9, 3.745121126298465*^9}},
+ CellLabel->
+  "In[102]:=",ExpressionUUID->"874f7b62-ceb7-4dee-90f7-8e2edd7b7f47"],
+
+Cell[BoxData["\<\"|Twinkle, twinkle, little star [beat],|How I wonder what \
+you are [beat],|Up above the world so high [beat],|Like a diamond in the sky.\
+\"\>"], "Output",
+ CellChangeTimes->{{3.745121115671404*^9, 3.745121126666605*^9}},
+ CellLabel->
+  "Out[102]=",ExpressionUUID->"18de1a23-86f8-4bd1-b665-4ab440619229"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"words", " ", "=", " ", 
+  RowBox[{"StringSplit", "[", 
+   RowBox[{
+    RowBox[{"ToLowerCase", "@", "firstStanzaSung"}], ",", " ", 
+    RowBox[{"RegularExpression", "[", "\"\<[ ,|!\\\\.]+\>\"", "]"}]}], 
+   "]"}]}]], "Code",
+ CellChangeTimes->{{3.745117512069655*^9, 3.745117542422477*^9}, {
+   3.745117608150029*^9, 3.745117609719141*^9}, {3.74511768577252*^9, 
+   3.745117729750539*^9}, {3.745117761165205*^9, 3.745117775476923*^9}, 
+   3.7451178445158873`*^9, {3.745117974224773*^9, 3.745117996996736*^9}, {
+   3.745118464472348*^9, 3.745118504791999*^9}, {3.74511998225956*^9, 
+   3.745119983641325*^9}, {3.74512008607799*^9, 3.7451201212156*^9}, {
+   3.7451201575085506`*^9, 3.7451202407867603`*^9}, {3.745120281786173*^9, 
+   3.745120302598777*^9}, {3.7451203519504766`*^9, 3.745120383804113*^9}},
+ CellLabel->
+  "In[103]:=",ExpressionUUID->"83a56eb6-5a76-4595-85f9-97d71605a35a"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"twinkle\"\>", ",", "\<\"twinkle\"\>", ",", "\<\"little\"\>", 
+   ",", "\<\"star\"\>", ",", "\<\"[beat]\"\>", ",", "\<\"how\"\>", 
+   ",", "\<\"i\"\>", ",", "\<\"wonder\"\>", ",", "\<\"what\"\>", 
+   ",", "\<\"you\"\>", ",", "\<\"are\"\>", ",", "\<\"[beat]\"\>", 
+   ",", "\<\"up\"\>", ",", "\<\"above\"\>", ",", "\<\"the\"\>", 
+   ",", "\<\"world\"\>", ",", "\<\"so\"\>", ",", "\<\"high\"\>", 
+   ",", "\<\"[beat]\"\>", ",", "\<\"like\"\>", ",", "\<\"a\"\>", 
+   ",", "\<\"diamond\"\>", ",", "\<\"in\"\>", ",", "\<\"the\"\>", 
+   ",", "\<\"sky\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.745120193203168*^9, 3.745120241273778*^9}, {
+   3.745120291398032*^9, 3.745120303031208*^9}, {3.745120353847025*^9, 
+   3.745120384163039*^9}, 3.745120466804351*^9, 3.745121134510401*^9},
+ CellLabel->
+  "Out[103]=",ExpressionUUID->"78636f16-106c-4cc2-922a-d0834b8991aa"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"uniques", " ", "=", " ", 
+  RowBox[{"First", " ", "/@", " ", 
+   RowBox[{"Tally", " ", "@", " ", "words"}]}]}]], "Code",
+ CellChangeTimes->{{3.745118508221929*^9, 3.745118515468562*^9}},
+ CellLabel->
+  "In[104]:=",ExpressionUUID->"1409ea33-d97e-415d-8414-84c60c8dae19"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"twinkle\"\>", ",", "\<\"little\"\>", ",", "\<\"star\"\>", 
+   ",", "\<\"[beat]\"\>", ",", "\<\"how\"\>", ",", "\<\"i\"\>", 
+   ",", "\<\"wonder\"\>", ",", "\<\"what\"\>", ",", "\<\"you\"\>", 
+   ",", "\<\"are\"\>", ",", "\<\"up\"\>", ",", "\<\"above\"\>", 
+   ",", "\<\"the\"\>", ",", "\<\"world\"\>", ",", "\<\"so\"\>", 
+   ",", "\<\"high\"\>", ",", "\<\"like\"\>", ",", "\<\"a\"\>", 
+   ",", "\<\"diamond\"\>", ",", "\<\"in\"\>", ",", "\<\"sky\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.745118515903367*^9, 3.745119426081153*^9, 
+  3.745119791700083*^9, 3.745120421382812*^9, 3.745120474736389*^9, 
+  3.745121137618333*^9},
+ CellLabel->
+  "Out[104]=",ExpressionUUID->"b006b493-8ec0-4179-8888-6f457bd29b07"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"syllablized", " ", "=", " ", 
+  RowBox[{"AssociationThread", "[", 
+   RowBox[{"uniques", ",", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"WordData", "[", 
+       RowBox[{"#", ",", " ", "\"\<Hyphenation\>\""}], "]"}], "&"}], " ", "/@",
+      " ", "uniques"}]}], "]"}]}]], "Code",
+ CellChangeTimes->{{3.745117881914785*^9, 3.74511790119483*^9}, {
+  3.745117937250361*^9, 3.7451179666275673`*^9}, {3.7451180070126677`*^9, 
+  3.7451180704830303`*^9}, {3.745118526798791*^9, 3.745118532934153*^9}, {
+  3.745119867055594*^9, 3.745119868613504*^9}},
+ CellLabel->
+  "In[105]:=",ExpressionUUID->"a3d92c83-da95-43f4-82bd-a7471773cddd"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"twinkle\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\<\"twin\"\>", ",", "\<\"kle\"\>"}], "}"}]}], ",", 
+   RowBox[{"\<\"little\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\<\"lit\"\>", ",", "\<\"tle\"\>"}], "}"}]}], ",", 
+   RowBox[{"\<\"star\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"star\"\>", "}"}]}], ",", 
+   RowBox[{"\<\"[beat]\"\>", "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{"\<\"how\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"how\"\>", "}"}]}], ",", 
+   RowBox[{"\<\"i\"\>", "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{"\<\"wonder\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\<\"won\"\>", ",", "\<\"der\"\>"}], "}"}]}], ",", 
+   RowBox[{"\<\"what\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"what\"\>", "}"}]}], ",", 
+   RowBox[{"\<\"you\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"you\"\>", "}"}]}], ",", 
+   RowBox[{"\<\"are\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"are\"\>", "}"}]}], ",", 
+   RowBox[{"\<\"up\"\>", "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{"\<\"above\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\<\"a\"\>", ",", "\<\"bove\"\>"}], "}"}]}], ",", 
+   RowBox[{"\<\"the\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"the\"\>", "}"}]}], ",", 
+   RowBox[{"\<\"world\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"world\"\>", "}"}]}], ",", 
+   RowBox[{"\<\"so\"\>", "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{"\<\"high\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"high\"\>", "}"}]}], ",", 
+   RowBox[{"\<\"like\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"like\"\>", "}"}]}], ",", 
+   RowBox[{"\<\"a\"\>", "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{"\<\"diamond\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\<\"dia\"\>", ",", "\<\"mond\"\>"}], "}"}]}], ",", 
+   RowBox[{"\<\"in\"\>", "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{"\<\"sky\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"sky\"\>", "}"}]}]}], "\[RightAssociation]"}]], "Output",\
+
+ CellChangeTimes->{{3.745117895784074*^9, 3.745117907645082*^9}, {
+   3.745117943616436*^9, 3.7451179586073008`*^9}, {3.745118041387649*^9, 
+   3.7451180816422033`*^9}, {3.7451185282867193`*^9, 3.7451185336037397`*^9}, 
+   3.745119426150441*^9, 3.745119799867817*^9, 3.745119869029496*^9, 
+   3.745120426262315*^9, 3.745120504146101*^9, 3.745121140949946*^9},
+ CellLabel->
+  "Out[105]=",ExpressionUUID->"79c77d4b-521a-4a8a-94d1-cfd7126dab2a"]
+}, Open  ]],
+
+Cell["\<\
+Looks like all the Missing hyphenations are one syllable or the `[beat]` token\
+\>", "Text",
+ CellChangeTimes->{{3.745119805830613*^9, 3.745119841726285*^9}, {
+  3.7451204350419397`*^9, 3.745120443537178*^9}, {3.745120512591199*^9, 
+  3.745120513527052*^9}},ExpressionUUID->"301f9413-d8c5-4e43-89f8-\
+58a41614187e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"toFillIn", " ", "=", " ", 
+  RowBox[{"Select", "[", 
+   RowBox[{"syllablized", ",", " ", "MissingQ"}], "]"}]}]], "Code",
+ CellChangeTimes->{{3.745118215486868*^9, 3.7451182944867563`*^9}, 
+   3.745119874616124*^9},
+ CellLabel->
+  "In[106]:=",ExpressionUUID->"687dbe57-d536-4ea0-a4d2-f8b315ba9711"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"[beat]\"\>", "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{"\<\"i\"\>", "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{"\<\"up\"\>", "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{"\<\"so\"\>", "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{"\<\"a\"\>", "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}], ",", 
+   RowBox[{"\<\"in\"\>", "\[Rule]", 
+    RowBox[{"Missing", "[", "\<\"NotAvailable\"\>", "]"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{{3.745118216949691*^9, 3.745118237845017*^9}, {
+   3.7451182779014807`*^9, 3.745118294918703*^9}, 3.745118538704939*^9, 
+   3.745119426216858*^9, 3.745119802196793*^9, 3.745119843573511*^9, 
+   3.745119875211605*^9, 3.7451205154404707`*^9, 3.745121143139194*^9},
+ CellLabel->
+  "Out[106]=",ExpressionUUID->"3efe7054-e862-47fc-9b63-f9e5f2f91658"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"syllablizedAll", " ", "=", " ", 
+  RowBox[{"Append", "[", 
+   RowBox[{"syllablized", ",", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"#", " ", "\[Rule]", " ", 
+       RowBox[{"{", " ", "#", " ", "}"}]}], "&"}], " ", "/@", " ", 
+     RowBox[{"Keys", "@", "toFillIn"}]}]}], "]"}]}]], "Code",
+ CellChangeTimes->{{3.745118334178165*^9, 3.74511837739296*^9}, {
+  3.745118546154808*^9, 3.745118574105489*^9}, {3.745118612064678*^9, 
+  3.7451186463520803`*^9}, {3.745118684214035*^9, 3.745118690104341*^9}, {
+  3.7451188030857973`*^9, 3.745118806811482*^9}, {3.74511987771281*^9, 
+  3.7451198831091003`*^9}, {3.745120580623054*^9, 3.745120581189323*^9}},
+ CellLabel->
+  "In[107]:=",ExpressionUUID->"50b0b9b4-a424-460d-b1fa-5565a0458691"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"twinkle\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\<\"twin\"\>", ",", "\<\"kle\"\>"}], "}"}]}], ",", 
+   RowBox[{"\<\"little\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\<\"lit\"\>", ",", "\<\"tle\"\>"}], "}"}]}], ",", 
+   RowBox[{"\<\"star\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"star\"\>", "}"}]}], ",", 
+   RowBox[{"\<\"how\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"how\"\>", "}"}]}], ",", 
+   RowBox[{"\<\"wonder\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\<\"won\"\>", ",", "\<\"der\"\>"}], "}"}]}], ",", 
+   RowBox[{"\<\"what\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"what\"\>", "}"}]}], ",", 
+   RowBox[{"\<\"you\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"you\"\>", "}"}]}], ",", 
+   RowBox[{"\<\"are\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"are\"\>", "}"}]}], ",", 
+   RowBox[{"\<\"above\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\<\"a\"\>", ",", "\<\"bove\"\>"}], "}"}]}], ",", 
+   RowBox[{"\<\"the\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"the\"\>", "}"}]}], ",", 
+   RowBox[{"\<\"world\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"world\"\>", "}"}]}], ",", 
+   RowBox[{"\<\"high\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"high\"\>", "}"}]}], ",", 
+   RowBox[{"\<\"like\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"like\"\>", "}"}]}], ",", 
+   RowBox[{"\<\"diamond\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\<\"dia\"\>", ",", "\<\"mond\"\>"}], "}"}]}], ",", 
+   RowBox[{"\<\"sky\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"sky\"\>", "}"}]}], ",", 
+   RowBox[{"\<\"[beat]\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"[beat]\"\>", "}"}]}], ",", 
+   RowBox[{"\<\"i\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"i\"\>", "}"}]}], ",", 
+   RowBox[{"\<\"up\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"up\"\>", "}"}]}], ",", 
+   RowBox[{"\<\"so\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"so\"\>", "}"}]}], ",", 
+   RowBox[{"\<\"a\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"a\"\>", "}"}]}], ",", 
+   RowBox[{"\<\"in\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"in\"\>", "}"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{
+  3.7451183451470423`*^9, 3.7451185593712378`*^9, {3.74511861927757*^9, 
+   3.7451186277457027`*^9}, 3.7451186905691433`*^9, 3.745118807586698*^9, 
+   3.7451194262890863`*^9, 3.74511984621807*^9, 3.745119883497889*^9, 
+   3.745120518438157*^9, 3.74512058160147*^9, 3.745121144887878*^9},
+ CellLabel->
+  "Out[107]=",ExpressionUUID->"30eb00ba-6da0-4ad0-aa94-c54c075da997"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"syllables", " ", "=", " ", 
+  RowBox[{"Flatten", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"syllablizedAll", "[", "#", "]"}], "&"}], " ", "/@", " ", 
+    "words"}], "]"}]}]], "Code",
+ CellChangeTimes->{{3.74511869812113*^9, 3.745118758255568*^9}, {
+  3.745118800998316*^9, 3.745118862314777*^9}, {3.745119887085124*^9, 
+  3.7451198923508863`*^9}, {3.745120537311947*^9, 3.74512054981483*^9}, {
+  3.745120594071405*^9, 3.745120599436124*^9}},
+ CellLabel->
+  "In[108]:=",ExpressionUUID->"ce461729-e629-4c40-b70f-1c9326e5b037"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"twin\"\>", ",", "\<\"kle\"\>", ",", "\<\"twin\"\>", 
+   ",", "\<\"kle\"\>", ",", "\<\"lit\"\>", ",", "\<\"tle\"\>", 
+   ",", "\<\"star\"\>", ",", "\<\"[beat]\"\>", ",", "\<\"how\"\>", 
+   ",", "\<\"i\"\>", ",", "\<\"won\"\>", ",", "\<\"der\"\>", 
+   ",", "\<\"what\"\>", ",", "\<\"you\"\>", ",", "\<\"are\"\>", 
+   ",", "\<\"[beat]\"\>", ",", "\<\"up\"\>", ",", "\<\"a\"\>", 
+   ",", "\<\"bove\"\>", ",", "\<\"the\"\>", ",", "\<\"world\"\>", 
+   ",", "\<\"so\"\>", ",", "\<\"high\"\>", ",", "\<\"[beat]\"\>", 
+   ",", "\<\"like\"\>", ",", "\<\"a\"\>", ",", "\<\"dia\"\>", 
+   ",", "\<\"mond\"\>", ",", "\<\"in\"\>", ",", "\<\"the\"\>", 
+   ",", "\<\"sky\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.74511886279878*^9, 3.745119426348791*^9, 3.745119892994863*^9, {
+   3.7451205220825357`*^9, 3.7451205998741827`*^9}, 3.7451211470223618`*^9},
+ CellLabel->
+  "Out[108]=",ExpressionUUID->"ad3e7e43-bd53-450a-b77f-8d01c1c07c80"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "@", "syllables"}]], "Code",
+ CellChangeTimes->{{3.745118866058301*^9, 3.7451188681052723`*^9}, 
+   3.745119900975316*^9},
+ CellLabel->
+  "In[109]:=",ExpressionUUID->"566eab0a-bc3f-4772-b018-d6ba7cda46d3"],
+
+Cell[BoxData["31"], "Output",
+ CellChangeTimes->{3.745118868560227*^9, 3.745119426417107*^9, 
+  3.745119901630073*^9, 3.74512060611942*^9, 3.745121148374998*^9},
+ CellLabel->
+  "Out[109]=",ExpressionUUID->"f8ca2bb2-c97d-4482-b6ee-53eab5e7361a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"alphabet", " ", "=", " ", 
+  RowBox[{"AssociationThread", "[", 
+   RowBox[{
+    RowBox[{"Range", "[", "26", "]"}], ",", " ", 
+    RowBox[{"Alphabet", "[", "]"}]}], "]"}]}]], "Code",
+ CellChangeTimes->{{3.745119334057069*^9, 3.745119356984671*^9}, {
+  3.745120704865497*^9, 3.7451207128073587`*^9}},
+ CellLabel->
+  "In[110]:=",ExpressionUUID->"1bad5d46-8238-419c-b273-db39c9c6e77b"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"1", "\[Rule]", "\<\"a\"\>"}], ",", 
+   RowBox[{"2", "\[Rule]", "\<\"b\"\>"}], ",", 
+   RowBox[{"3", "\[Rule]", "\<\"c\"\>"}], ",", 
+   RowBox[{"4", "\[Rule]", "\<\"d\"\>"}], ",", 
+   RowBox[{"5", "\[Rule]", "\<\"e\"\>"}], ",", 
+   RowBox[{"6", "\[Rule]", "\<\"f\"\>"}], ",", 
+   RowBox[{"7", "\[Rule]", "\<\"g\"\>"}], ",", 
+   RowBox[{"8", "\[Rule]", "\<\"h\"\>"}], ",", 
+   RowBox[{"9", "\[Rule]", "\<\"i\"\>"}], ",", 
+   RowBox[{"10", "\[Rule]", "\<\"j\"\>"}], ",", 
+   RowBox[{"11", "\[Rule]", "\<\"k\"\>"}], ",", 
+   RowBox[{"12", "\[Rule]", "\<\"l\"\>"}], ",", 
+   RowBox[{"13", "\[Rule]", "\<\"m\"\>"}], ",", 
+   RowBox[{"14", "\[Rule]", "\<\"n\"\>"}], ",", 
+   RowBox[{"15", "\[Rule]", "\<\"o\"\>"}], ",", 
+   RowBox[{"16", "\[Rule]", "\<\"p\"\>"}], ",", 
+   RowBox[{"17", "\[Rule]", "\<\"q\"\>"}], ",", 
+   RowBox[{"18", "\[Rule]", "\<\"r\"\>"}], ",", 
+   RowBox[{"19", "\[Rule]", "\<\"s\"\>"}], ",", 
+   RowBox[{"20", "\[Rule]", "\<\"t\"\>"}], ",", 
+   RowBox[{"21", "\[Rule]", "\<\"u\"\>"}], ",", 
+   RowBox[{"22", "\[Rule]", "\<\"v\"\>"}], ",", 
+   RowBox[{"23", "\[Rule]", "\<\"w\"\>"}], ",", 
+   RowBox[{"24", "\[Rule]", "\<\"x\"\>"}], ",", 
+   RowBox[{"25", "\[Rule]", "\<\"y\"\>"}], ",", 
+   RowBox[{"26", "\[Rule]", "\<\"z\"\>"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.745119357412154*^9, 3.745119426478367*^9, 
+  3.7451199050114594`*^9, 3.745120608875572*^9, 3.7451207131514072`*^9, 
+  3.7451211498361673`*^9},
+ CellLabel->
+  "Out[110]=",ExpressionUUID->"b98e5277-69dc-49c9-8e4e-cbd4527accba"]
+}, Open  ]],
+
+Cell["\<\
+Let\[CloseCurlyQuote]s transcribe the way we sing the alphabet with stops for \
+pauses\
+\>", "Text",
+ CellChangeTimes->{{3.745119909037529*^9, 
+  3.745119932211236*^9}},ExpressionUUID->"02ac8419-80fa-42bc-a9ed-\
+c5fdb91911cb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"alphabetSung", " ", "=", " ", 
+  RowBox[{"Flatten", "[", 
+   RowBox[{"{", "\n", "\t", 
+    RowBox[{
+     RowBox[{"Values", "@", 
+      RowBox[{"alphabet", "[", 
+       RowBox[{"[", 
+        RowBox[{"1", ";;", "7"}], "]"}], "]"}]}], ",", "\n", "\t", 
+     "\"\<[beat]\>\"", ",", "\n", "\t", 
+     RowBox[{"Values", "@", 
+      RowBox[{"alphabet", "[", 
+       RowBox[{"[", 
+        RowBox[{"8", ";;", "11"}], "]"}], "]"}]}], ",", "\n", "\t", 
+     RowBox[{"{", " ", 
+      RowBox[{"\"\<lm\>\"", ",", " ", "\"\<no\>\""}], " ", "}"}], ",", "\n", 
+     "\t", 
+     RowBox[{"{", " ", 
+      RowBox[{"\"\<p\>\"", ",", " ", "\"\<[beat]\>\""}], " ", "}"}], ",", 
+     "\n", "\t", 
+     RowBox[{"Values", "@", 
+      RowBox[{"alphabet", "[", 
+       RowBox[{"[", 
+        RowBox[{"17", ";;", "19"}], "]"}], "]"}]}], ",", "\n", "\t", 
+     RowBox[{"{", " ", "\"\<[beat]\>\"", " ", "}"}], ",", "\n", "\t", 
+     RowBox[{"Values", "@", 
+      RowBox[{"alphabet", "[", 
+       RowBox[{"[", 
+        RowBox[{"20", ";;", "22"}], "]"}], "]"}]}], ",", "\n", "\t", 
+     RowBox[{"{", " ", "\"\<[beat]\>\"", " ", "}"}], ",", "\n", "\t", 
+     RowBox[{"{", " ", 
+      RowBox[{
+      "\"\<double\>\"", ",", " ", "\"\<u\>\"", ",", " ", "\"\<x\>\"", ",", 
+       " ", "\"\<[beat]\>\"", ",", " ", "\"\<y\>\"", ",", " ", "\"\<and\>\"", 
+       ",", " ", "\"\<z\>\""}], " ", "}"}]}], "\n", "}"}], "]"}]}]], "Code",
+ CellChangeTimes->{{3.745120620606928*^9, 3.745120692697654*^9}, {
+  3.745120727880026*^9, 3.745120801758062*^9}, {3.745120835143749*^9, 
+  3.7451208593878517`*^9}, {3.7451209115160103`*^9, 3.745120994273551*^9}},
+ CellLabel->
+  "In[111]:=",ExpressionUUID->"f36adcc0-1157-4a00-b814-1c6ca215f6a3"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"a\"\>", ",", "\<\"b\"\>", ",", "\<\"c\"\>", ",", "\<\"d\"\>", 
+   ",", "\<\"e\"\>", ",", "\<\"f\"\>", ",", "\<\"g\"\>", 
+   ",", "\<\"[beat]\"\>", ",", "\<\"h\"\>", ",", "\<\"i\"\>", 
+   ",", "\<\"j\"\>", ",", "\<\"k\"\>", ",", "\<\"lm\"\>", ",", "\<\"no\"\>", 
+   ",", "\<\"p\"\>", ",", "\<\"[beat]\"\>", ",", "\<\"q\"\>", 
+   ",", "\<\"r\"\>", ",", "\<\"s\"\>", ",", "\<\"[beat]\"\>", 
+   ",", "\<\"t\"\>", ",", "\<\"u\"\>", ",", "\<\"v\"\>", 
+   ",", "\<\"[beat]\"\>", ",", "\<\"double\"\>", ",", "\<\"u\"\>", 
+   ",", "\<\"x\"\>", ",", "\<\"[beat]\"\>", ",", "\<\"y\"\>", 
+   ",", "\<\"and\"\>", ",", "\<\"z\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7451206826890173`*^9, {3.745120729099309*^9, 3.7451207407664137`*^9}, 
+   3.7451207726584272`*^9, 3.7451208032270927`*^9, 3.745120843014435*^9, {
+   3.74512090702433*^9, 3.74512094311008*^9}, {3.745120980225073*^9, 
+   3.7451209946363363`*^9}, 3.745121152139142*^9},
+ CellLabel->
+  "Out[111]=",ExpressionUUID->"79138803-6528-4484-b394-a999d541aa10"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "@", "alphabetSung"}]], "Code",
+ CellChangeTimes->{{3.745120999134416*^9, 3.745121001682184*^9}},
+ CellLabel->
+  "In[112]:=",ExpressionUUID->"52bc559a-021b-439b-91a8-e88ede9656c8"],
+
+Cell[BoxData["31"], "Output",
+ CellChangeTimes->{3.7451210020357847`*^9, 3.745121156093193*^9},
+ CellLabel->
+  "Out[112]=",ExpressionUUID->"7e27db34-2038-4c15-ad9a-9dbe6829c46d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "@", "syllables"}]], "Code",
+ CellChangeTimes->{{3.745121011711431*^9, 3.7451210243696747`*^9}},
+ CellLabel->
+  "In[113]:=",ExpressionUUID->"01c106b7-30fc-4ed3-a9f6-ebdd0066c677"],
+
+Cell[BoxData["31"], "Output",
+ CellChangeTimes->{{3.74512101555674*^9, 3.7451210249233923`*^9}, 
+   3.7451211575022383`*^9},
+ CellLabel->
+  "Out[113]=",ExpressionUUID->"8d20036c-a777-4454-abd2-8f8578a52097"]
+}, Open  ]]
+},
+WindowSize->{808, 751},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+WindowStatusArea->None,
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 236, 4, 52, "Code",ExpressionUUID->"9adc813b-b255-4f52-8462-620024e0d576"],
+Cell[797, 26, 667, 13, 52, "Code",ExpressionUUID->"d47b8b5d-2004-45c8-8eda-2a234f3d46a1"],
+Cell[1467, 41, 197, 3, 35, "Text",ExpressionUUID->"04b39c0b-9f5a-4506-8b55-cfdb2a6fc111"],
+Cell[CellGroupData[{
+Cell[1689, 48, 332, 8, 52, "Code",ExpressionUUID->"309f37e8-0c1b-43bb-8eb2-ba1e79914e6e"],
+Cell[2024, 58, 1394, 20, 686, "Output",ExpressionUUID->"938e3617-0d2d-4a87-b792-a603b2bae339"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3455, 83, 1512, 31, 92, "Code",ExpressionUUID->"377fd17f-1c95-4b55-a2a3-d9e3fb596675"],
+Cell[4970, 116, 1359, 19, 182, "Output",ExpressionUUID->"77d1cc90-888d-40d6-b406-102a6ec948a8"]
+}, Open  ]],
+Cell[6344, 138, 466, 10, 52, "Code",ExpressionUUID->"77e24601-87ea-43b8-a285-9347b6ae3b98"],
+Cell[CellGroupData[{
+Cell[6835, 152, 248, 4, 52, "Code",ExpressionUUID->"cf6ed1bc-4c44-4257-a946-95452ddf4ca8"],
+Cell[7086, 158, 271, 3, 56, "Output",ExpressionUUID->"0c8e6d13-2e15-44b8-ac6f-45b2973f219c"]
+}, Open  ]],
+Cell[7372, 164, 203, 3, 35, "Text",ExpressionUUID->"76118899-24c4-46f2-a182-d5360eeea7bf"],
+Cell[CellGroupData[{
+Cell[7600, 171, 480, 10, 52, "Code",ExpressionUUID->"874f7b62-ceb7-4dee-90f7-8e2edd7b7f47"],
+Cell[8083, 183, 322, 5, 56, "Output",ExpressionUUID->"18de1a23-86f8-4bd1-b665-4ab440619229"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8442, 193, 909, 16, 52, "Code",ExpressionUUID->"83a56eb6-5a76-4595-85f9-97d71605a35a"],
+Cell[9354, 211, 906, 15, 56, "Output",ExpressionUUID->"78636f16-106c-4cc2-922a-d0834b8991aa"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10297, 231, 293, 6, 52, "Code",ExpressionUUID->"1409ea33-d97e-415d-8414-84c60c8dae19"],
+Cell[10593, 239, 759, 14, 56, "Output",ExpressionUUID->"b006b493-8ec0-4179-8888-6f457bd29b07"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11389, 258, 653, 14, 52, "Code",ExpressionUUID->"a3d92c83-da95-43f4-82bd-a7471773cddd"],
+Cell[12045, 274, 2643, 57, 122, "Output",ExpressionUUID->"79c77d4b-521a-4a8a-94d1-cfd7126dab2a"]
+}, Open  ]],
+Cell[14703, 334, 325, 6, 35, "Text",ExpressionUUID->"301f9413-d8c5-4e43-89f8-58a41614187e"],
+Cell[CellGroupData[{
+Cell[15053, 344, 321, 7, 52, "Code",ExpressionUUID->"687dbe57-d536-4ea0-a4d2-f8b315ba9711"],
+Cell[15377, 353, 1082, 21, 60, "Output",ExpressionUUID->"3efe7054-e862-47fc-9b63-f9e5f2f91658"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16496, 379, 758, 15, 52, "Code",ExpressionUUID->"50b0b9b4-a424-460d-b1fa-5565a0458691"],
+Cell[17257, 396, 2465, 56, 101, "Output",ExpressionUUID->"30eb00ba-6da0-4ad0-aa94-c54c075da997"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19759, 457, 550, 12, 52, "Code",ExpressionUUID->"ce461729-e629-4c40-b70f-1c9326e5b037"],
+Cell[20312, 471, 972, 17, 56, "Output",ExpressionUUID->"ad3e7e43-bd53-450a-b77f-8d01c1c07c80"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21321, 493, 238, 5, 52, "Code",ExpressionUUID->"566eab0a-bc3f-4772-b018-d6ba7cda46d3"],
+Cell[21562, 500, 244, 4, 34, "Output",ExpressionUUID->"f8ca2bb2-c97d-4482-b6ee-53eab5e7361a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21843, 509, 405, 9, 52, "Code",ExpressionUUID->"1bad5d46-8238-419c-b273-db39c9c6e77b"],
+Cell[22251, 520, 1603, 34, 80, "Output",ExpressionUUID->"b98e5277-69dc-49c9-8e4e-cbd4527accba"]
+}, Open  ]],
+Cell[23869, 557, 236, 6, 35, "Text",ExpressionUUID->"02ac8419-80fa-42bc-a9ed-c5fdb91911cb"],
+Cell[CellGroupData[{
+Cell[24130, 567, 1710, 39, 262, "Code",ExpressionUUID->"f36adcc0-1157-4a00-b814-1c6ca215f6a3"],
+Cell[25843, 608, 1055, 18, 56, "Output",ExpressionUUID->"79138803-6528-4484-b394-a999d541aa10"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26935, 631, 213, 4, 52, "Code",ExpressionUUID->"52bc559a-021b-439b-91a8-e88ede9656c8"],
+Cell[27151, 637, 178, 3, 34, "Output",ExpressionUUID->"7e27db34-2038-4c15-ad9a-9dbe6829c46d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27366, 645, 212, 4, 52, "Code",ExpressionUUID->"01c106b7-30fc-4ed3-a9f6-ebdd0066c677"],
+Cell[27581, 651, 207, 4, 34, "Output",ExpressionUUID->"8d20036c-a777-4454-abd2-8f8578a52097"]
+}, Open  ]]
+}
+]
+*)
+
