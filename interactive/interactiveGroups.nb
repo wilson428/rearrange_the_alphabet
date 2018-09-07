@@ -1,0 +1,210 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7789,        202]
+NotebookOptionsPosition[      6898,        177]
+NotebookOutlinePosition[      7307,        195]
+CellTagsIndexPosition[      7264,        192]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+(I start off every notebook with these two commands to clear the namespace \
+and anchor the directory)\
+\>", "Text",
+ CellChangeTimes->{{3.745167466309741*^9, 3.745167487140377*^9}, {
+  3.745206800798007*^9, 
+  3.745206802685419*^9}},ExpressionUUID->"2dbb94a4-f969-4412-8045-\
+2c02a3c28fae"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}], ";"}]], "Code",
+ CellChangeTimes->{
+  3.745167446030731*^9, {3.7452540708365917`*^9, 3.745254071196039*^9}, {
+   3.745254927986794*^9, 3.745254955752561*^9}, {3.745255093430162*^9, 
+   3.745255093829529*^9}},
+ CellLabel->
+  "In[360]:=",ExpressionUUID->"5b698e3b-1d62-4c19-849d-807032042587"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"loadInteractive", "[", "]"}], " ", ":=", " ", 
+  RowBox[{"(", "\n", "\t", 
+   RowBox[{
+    RowBox[{
+    "CloudGet", "[", 
+     "\"\<https://www.wolframcloud.com/objects/9aa7a737-1854-40df-a787-\
+a2c25e74297b\>\"", "]"}], ";", "\n", "\t", 
+    RowBox[{"alphabetInteractive", " ", "=", " ", 
+     RowBox[{"Manipulate", "[", 
+      RowBox[{
+       RowBox[{"(", "\n", "\t\t", 
+        RowBox[{"Column", "[", 
+         RowBox[{
+          RowBox[{"{", "\n", "\t\t\t", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"ToString", "@", "n"}], " ", "<>", " ", 
+               "\"\< Tables\>\""}], ",", " ", 
+              RowBox[{"FontSize", "\[Rule]", "20"}], ",", " ", 
+              RowBox[{"TextAlignment", "\[Rule]", "Center"}], ",", " ", 
+              "Bold"}], "]"}], ",", "\n", "\t\t\t", 
+            RowBox[{"chartGroups", "[", 
+             RowBox[{
+              RowBox[{"makeGroups", "[", "n", "]"}], ",", " ", "600"}], 
+             "]"}]}], "\n", "\t", "}"}], ",", " ", 
+          RowBox[{"Alignment", " ", "\[Rule]", " ", "Center"}]}], "]"}], "\n",
+         ")"}], ",", " ", "\n", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", " ", 
+          RowBox[{"n", ",", " ", "4", ",", " ", "\"\<Number of Tables\>\""}], 
+          " ", "}"}], ",", " ", "2", ",", " ", "10", ",", " ", "1"}], " ", 
+        "}"}], ",", "\n", 
+       RowBox[{"LabelStyle", " ", "\[Rule]", " ", 
+        RowBox[{"{", " ", 
+         RowBox[{"FontSize", "\[Rule]", "14"}], " ", "}"}]}]}], 
+      "]"}]}]}]}]}]], "Code",
+ CellChangeTimes->{
+  3.744369394981121*^9, {3.744369551311208*^9, 3.744369567399302*^9}, {
+   3.7443696052561207`*^9, 3.744369609400186*^9}, 3.744369717361679*^9, {
+   3.745254064272271*^9, 3.745254077502613*^9}, {3.745255026153934*^9, 
+   3.7452550985087214`*^9}, {3.745255544821073*^9, 3.7452556111700706`*^9}, {
+   3.745256381132366*^9, 3.745256391186672*^9}, {3.74525661227308*^9, 
+   3.7452566547101507`*^9}, {3.7452567081502*^9, 3.745256862002987*^9}, {
+   3.745259283943098*^9, 3.745259293132196*^9}, {3.745259968026846*^9, 
+   3.7452600075124397`*^9}, {3.745260223809929*^9, 3.7452603066443987`*^9}, {
+   3.7452603955268908`*^9, 
+   3.745260490799397*^9}},ExpressionUUID->"7dbcf5b2-b4fd-4b89-bda1-\
+2cc71f9c08df"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 7, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`n$$], 4, "Number of Tables"}, 2, 10, 1}}, 
+    Typeset`size$$ = {600., {221.634033203125, 227.365966796875}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`n$315588$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`n$$ = 4}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$315588$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> (
+       CloudGet[
+        "https://www.wolframcloud.com/objects/9aa7a737-1854-40df-a787-\
+a2c25e74297b"]; Column[{
+          Style[
+           StringJoin[
+            ToString[$CellContext`n$$], " Tables"], FontSize -> 20, 
+           TextAlignment -> Center, Bold], 
+          $CellContext`chartGroups[
+           $CellContext`makeGroups[$CellContext`n$$], 600]}, Alignment -> 
+         Center]), 
+      "Specifications" :> {{{$CellContext`n$$, 4, "Number of Tables"}, 2, 10, 
+         1}}, "Options" :> {LabelStyle -> {FontSize -> 14}}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{645., {268., 274.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.745260318710599*^9, {3.745260426016015*^9, 3.745260447758625*^9}},
+ CellLabel->
+  "Out[363]=",ExpressionUUID->"bc74a6b9-7c13-4ed6-9c25-9f4e7eae1a48"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CloudDeploy", "[", 
+  RowBox[{"alphabetInteractive", ",", " ", 
+   RowBox[{"Permissions", "\[Rule]", "\"\<Public\>\""}]}], "]"}]], "Code",
+ CellChangeTimes->{{3.7443696590602627`*^9, 3.744369672657915*^9}, 
+   3.7452600142002087`*^9},
+ CellLabel->
+  "In[362]:=",ExpressionUUID->"8477bcbf-2551-4dcf-9f2e-84d7f7d34119"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"CloudObject", "[", 
+   TemplateBox[{
+    "\"https://www.wolframcloud.com/objects/d221d7e0-458f-43dd-89d7-\
+55a7e8595ccc\"",
+     "https://www.wolframcloud.com/objects/d221d7e0-458f-43dd-89d7-\
+55a7e8595ccc"},
+    "HyperlinkURL"], "]"}],
+  CloudObject[
+  "https://www.wolframcloud.com/objects/d221d7e0-458f-43dd-89d7-55a7e8595ccc"],
+  SelectWithContents->True]], "Output",
+ CellChangeTimes->{
+  3.7443696755787687`*^9, 3.744369737090938*^9, 3.745260016139804*^9, {
+   3.745260150927999*^9, 3.745260178969179*^9}, 3.745260237684938*^9, 
+   3.745260326226925*^9, 3.745260440864194*^9},
+ CellLabel->
+  "Out[362]=",ExpressionUUID->"ccc562bf-b80d-4a54-8672-6deb47b5c0d8"]
+}, Open  ]]
+},
+AutoGeneratedPackage->Automatic,
+WindowSize->{808, 751},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+WindowStatusArea->None,
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 301, 7, 35, "Text",ExpressionUUID->"2dbb94a4-f969-4412-8045-2c02a3c28fae"],
+Cell[862, 29, 366, 8, 52, "Code",ExpressionUUID->"5b698e3b-1d62-4c19-849d-807032042587"],
+Cell[CellGroupData[{
+Cell[1253, 41, 2342, 52, 224, "Code",ExpressionUUID->"7dbcf5b2-b4fd-4b89-bda1-2cc71f9c08df"],
+Cell[3598, 95, 2193, 48, 561, "Output",ExpressionUUID->"bc74a6b9-7c13-4ed6-9c25-9f4e7eae1a48"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5828, 148, 341, 7, 52, "Code",ExpressionUUID->"8477bcbf-2551-4dcf-9f2e-84d7f7d34119"],
+Cell[6172, 157, 710, 17, 37, "Output",ExpressionUUID->"ccc562bf-b80d-4a54-8672-6deb47b5c0d8"]
+}, Open  ]]
+}
+]
+*)
+
