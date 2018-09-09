@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      7789,        202]
-NotebookOptionsPosition[      6898,        177]
-NotebookOutlinePosition[      7307,        195]
-CellTagsIndexPosition[      7264,        192]
+NotebookDataLength[     24222,        541]
+NotebookOptionsPosition[     23323,        516]
+NotebookOutlinePosition[     23732,        534]
+CellTagsIndexPosition[     23689,        531]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -34,52 +34,290 @@ Cell[BoxData[
   3.745167446030731*^9, {3.7452540708365917`*^9, 3.745254071196039*^9}, {
    3.745254927986794*^9, 3.745254955752561*^9}, {3.745255093430162*^9, 
    3.745255093829529*^9}},
- CellLabel->
-  "In[360]:=",ExpressionUUID->"5b698e3b-1d62-4c19-849d-807032042587"],
+ CellLabel->"In[55]:=",ExpressionUUID->"5b698e3b-1d62-4c19-849d-807032042587"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{
-  RowBox[{"loadInteractive", "[", "]"}], " ", ":=", " ", 
-  RowBox[{"(", "\n", "\t", 
+ RowBox[{"alphabetInteractive", " ", "=", " ", 
+  RowBox[{"Manipulate", "[", 
    RowBox[{
-    RowBox[{
-    "CloudGet", "[", 
-     "\"\<https://www.wolframcloud.com/objects/9aa7a737-1854-40df-a787-\
-a2c25e74297b\>\"", "]"}], ";", "\n", "\t", 
-    RowBox[{"alphabetInteractive", " ", "=", " ", 
-     RowBox[{"Manipulate", "[", 
+    RowBox[{"(", "\n", "\t", 
+     RowBox[{"Column", "[", 
       RowBox[{
-       RowBox[{"(", "\n", "\t\t", 
-        RowBox[{"Column", "[", 
-         RowBox[{
-          RowBox[{"{", "\n", "\t\t\t", 
-           RowBox[{
-            RowBox[{"Style", "[", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"ToString", "@", "n"}], " ", "<>", " ", 
-               "\"\< Tables\>\""}], ",", " ", 
-              RowBox[{"FontSize", "\[Rule]", "20"}], ",", " ", 
-              RowBox[{"TextAlignment", "\[Rule]", "Center"}], ",", " ", 
-              "Bold"}], "]"}], ",", "\n", "\t\t\t", 
-            RowBox[{"chartGroups", "[", 
-             RowBox[{
-              RowBox[{"makeGroups", "[", "n", "]"}], ",", " ", "600"}], 
-             "]"}]}], "\n", "\t", "}"}], ",", " ", 
-          RowBox[{"Alignment", " ", "\[Rule]", " ", "Center"}]}], "]"}], "\n",
-         ")"}], ",", " ", "\n", 
-       RowBox[{"{", 
+       RowBox[{"{", "\n", "\t\t", 
         RowBox[{
-         RowBox[{"{", " ", 
-          RowBox[{"n", ",", " ", "4", ",", " ", "\"\<Number of Tables\>\""}], 
-          " ", "}"}], ",", " ", "2", ",", " ", "10", ",", " ", "1"}], " ", 
-        "}"}], ",", "\n", 
-       RowBox[{"LabelStyle", " ", "\[Rule]", " ", 
-        RowBox[{"{", " ", 
-         RowBox[{"FontSize", "\[Rule]", "14"}], " ", "}"}]}]}], 
-      "]"}]}]}]}]}]], "Code",
+         RowBox[{"Style", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"ToString", "@", "n"}], " ", "<>", " ", 
+            "\"\< Tables\>\""}], ",", " ", 
+           RowBox[{"FontSize", "\[Rule]", "20"}], ",", " ", 
+           RowBox[{"TextAlignment", "\[Rule]", "Center"}], ",", " ", "Bold"}],
+           "]"}], ",", "\n", "\t\t", 
+         RowBox[{"ChartGroupsSorted", "[", 
+          RowBox[{
+           RowBox[{"MakeGroups", "[", "n", "]"}], ",", " ", "600"}], "]"}]}], 
+        "\n", "\t", "}"}], ",", " ", 
+       RowBox[{"Alignment", " ", "\[Rule]", " ", "Center"}]}], "]"}], ")"}], 
+    ",", " ", "\n", "\t", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", " ", 
+       RowBox[{"n", ",", " ", "4", ",", " ", "\"\<Number of Tables\>\""}], 
+       " ", "}"}], ",", " ", "2", ",", " ", "10", ",", " ", "1"}], " ", "}"}],
+     ",", "\n", "\t", 
+    RowBox[{"LabelStyle", " ", "\[Rule]", " ", 
+     RowBox[{"{", " ", 
+      RowBox[{"FontSize", "\[Rule]", "14"}], " ", "}"}]}], ",", "\n", "\t", 
+    RowBox[{"Initialization", "\[RuleDelayed]", 
+     RowBox[{"(", "\n", "\t\t", 
+      RowBox[{
+       RowBox[{"percents", " ", "=", " ", 
+        RowBox[{"<|", 
+         RowBox[{
+          RowBox[{"\"\<A\>\"", "\[Rule]", "0.0379425"}], ",", " ", 
+          RowBox[{"\"\<B\>\"", "\[Rule]", "0.0850223"}], ",", " ", 
+          RowBox[{"\"\<C\>\"", "\[Rule]", "0.077475"}], ",", " ", 
+          RowBox[{"\"\<D\>\"", "\[Rule]", "0.0453413"}], ",", " ", 
+          RowBox[{"\"\<E\>\"", "\[Rule]", "0.0185658"}], ",", " ", 
+          RowBox[{"\"\<F\>\"", "\[Rule]", "0.0338085"}], ",", " ", 
+          RowBox[{"\"\<G\>\"", "\[Rule]", "0.0557632"}], ",", " ", 
+          RowBox[{"\"\<H\>\"", "\[Rule]", "0.0708041"}], ",", " ", 
+          RowBox[{"\"\<I\>\"", "\[Rule]", "0.00413011"}], ",", " ", 
+          RowBox[{"\"\<J\>\"", "\[Rule]", "0.0298697"}], ",", " ", 
+          RowBox[{"\"\<K\>\"", "\[Rule]", "0.0326326"}], ",", " ", 
+          RowBox[{"\"\<L\>\"", "\[Rule]", "0.0491037"}], ",", " ", 
+          RowBox[{"\"\<M\>\"", "\[Rule]", "0.0963997"}], ",", " ", 
+          RowBox[{"\"\<N\>\"", "\[Rule]", "0.0190822"}], ",", " ", 
+          RowBox[{"\"\<O\>\"", "\[Rule]", "0.0152516"}], ",", " ", 
+          RowBox[{"\"\<P\>\"", "\[Rule]", "0.0498137"}], ",", " ", 
+          RowBox[{"\"\<Q\>\"", "\[Rule]", "0.00241787"}], ",", " ", 
+          RowBox[{"\"\<R\>\"", "\[Rule]", "0.0590957"}], ",", " ", 
+          RowBox[{"\"\<S\>\"", "\[Rule]", "0.0943162"}], ",", " ", 
+          RowBox[{"\"\<T\>\"", "\[Rule]", "0.0354322"}], ",", " ", 
+          RowBox[{"\"\<U\>\"", "\[Rule]", "0.00232247"}], ",", " ", 
+          RowBox[{"\"\<V\>\"", "\[Rule]", "0.0175313"}], ",", " ", 
+          RowBox[{"\"\<W\>\"", "\[Rule]", "0.0554885"}], ",", " ", 
+          RowBox[{"\"\<X\>\"", "\[Rule]", "0.000384696"}], ",", " ", 
+          RowBox[{"\"\<Y\>\"", "\[Rule]", "0.00634222"}], ",", " ", 
+          RowBox[{"\"\<Z\>\"", "\[Rule]", "0.00566274"}]}], "|>"}]}], ";", 
+       "\n", "\t\t", 
+       RowBox[{"percentsInverse", " ", "=", " ", 
+        RowBox[{"AssociationThread", "[", 
+         RowBox[{
+          RowBox[{"Values", "@", "percents"}], ",", " ", 
+          RowBox[{"Keys", "@", "percents"}]}], "]"}]}], ";", "\t", "\n", 
+       "\t\t", 
+       RowBox[{
+        RowBox[{"ValuesToLetters", "[", "list_", "]"}], " ", ":=", " ", 
+        RowBox[{"AssociationThread", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"percentsInverse", "[", "#", "]"}], "&"}], " ", "/@", " ",
+            "list"}], ",", " ", "list"}], "]"}]}], ";", "\n", "\n", "\t\t", 
+       RowBox[{
+        RowBox[{"SortNewAlphabet", "[", "newGroupsN_", "]"}], " ", ":=", " ", 
+        
+        RowBox[{"SortBy", "[", 
+         RowBox[{
+          RowBox[{"Keys", "[", 
+           RowBox[{"KeySort", " ", "/@", " ", "newGroupsN"}], "]"}], ",", " ", 
+          RowBox[{
+           RowBox[{"First", "@", "#"}], "&"}]}], "]"}]}], ";", "\n", "\t\t", 
+       RowBox[{
+        RowBox[{"SortLettersByOldAlphabet", "[", "newGroups_", "]"}], " ", ":=",
+         " ", 
+        RowBox[{"SortBy", "[", 
+         RowBox[{
+          RowBox[{"KeySort", " ", "/@", " ", "newGroups"}], ",", " ", 
+          RowBox[{
+           RowBox[{"First", "@", 
+            RowBox[{"Keys", "@", "#"}]}], "&"}]}], "]"}]}], ";", "\n", "\t\t",
+        "\n", "\t\t", 
+       RowBox[{
+        RowBox[{"AddOneToSmallestGroup", "[", 
+         RowBox[{"groups_", ",", " ", "remaining_"}], "]"}], " ", ":=", " ", 
+        RowBox[{"(", "\n", "\t\t\t", 
+         RowBox[{
+          RowBox[{"sortedByTotal", " ", "=", " ", 
+           RowBox[{"Reverse", "@", 
+            RowBox[{"SortBy", "[", 
+             RowBox[{"groups", ",", " ", 
+              RowBox[{
+               RowBox[{"Total", "@", "#"}], "&"}]}], "]"}]}]}], ";", "\n", 
+          "\t\t\t", 
+          RowBox[{"totals", " ", "=", " ", 
+           RowBox[{"Total", " ", "/@", " ", "sortedByTotal"}]}], ";", "\n", 
+          "\t\t\t", 
+          RowBox[{"nextGreatest", " ", "=", " ", 
+           RowBox[{"First", "@", "remaining"}]}], ";", "\n", "\t\t\t", 
+          RowBox[{"next", " ", "=", " ", 
+           RowBox[{"Append", "[", 
+            RowBox[{
+             RowBox[{"Most", "@", "sortedByTotal"}], ",", " ", 
+             RowBox[{"Append", "[", 
+              RowBox[{
+               RowBox[{"Last", "@", "sortedByTotal"}], ",", " ", 
+               "nextGreatest"}], "]"}]}], "]"}]}], ";", "\n", "\t\t\t", 
+          RowBox[{"index", " ", "=", " ", 
+           RowBox[{"First", "@", 
+            RowBox[{"First", "@", 
+             RowBox[{"Position", "[", 
+              RowBox[{"remaining", ",", " ", "nextGreatest"}], "]"}]}]}]}], 
+          ";", "\n", "\t\t\t", 
+          RowBox[{"stillStanding", " ", "=", " ", 
+           RowBox[{"Delete", "[", 
+            RowBox[{"remaining", ",", " ", "index"}], "]"}]}], ";", "\n", 
+          "\t\t\t", 
+          RowBox[{"{", " ", 
+           RowBox[{"next", ",", " ", "stillStanding"}], " ", "}"}]}], "\n", 
+         "\t\t", ")"}]}], ";", "\n", "\t\t", "\n", "\t\t", 
+       RowBox[{
+        RowBox[{"MakeGroups", "[", "n_", "]"}], " ", ":=", " ", 
+        RowBox[{"(", "\n", "\t\t\t", 
+         RowBox[{
+          RowBox[{"values", " ", "=", " ", 
+           RowBox[{"Values", "@", 
+            RowBox[{"Reverse", "@", 
+             RowBox[{"Sort", "[", "percents", "]"}]}]}]}], ";", "\n", 
+          "\t\t\t", 
+          RowBox[{"groups", " ", "=", " ", 
+           RowBox[{"List", " ", "/@", " ", 
+            RowBox[{"values", "[", 
+             RowBox[{"[", 
+              RowBox[{"1", ";;", "n"}], "]"}], "]"}]}]}], ";", "\n", "\t\t\t", 
+          RowBox[{"remaining", " ", "=", " ", 
+           RowBox[{"values", "[", 
+            RowBox[{"[", 
+             RowBox[{
+              RowBox[{"n", " ", "+", " ", "1"}], ";;"}], "]"}], "]"}]}], ";", 
+          "\n", "\t\t\t", 
+          RowBox[{"While", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Length", "@", "remaining"}], " ", ">", " ", "0"}], ",", 
+            " ", 
+            RowBox[{
+             RowBox[{"{", " ", 
+              RowBox[{"groups", ",", " ", "remaining"}], " ", "}"}], " ", "=",
+              " ", 
+             RowBox[{"AddOneToSmallestGroup", "[", 
+              RowBox[{"groups", ",", " ", "remaining"}], "]"}]}]}], "]"}], 
+          ";", "\n", "\t\t\t", 
+          RowBox[{"letteredGroups", " ", "=", " ", 
+           RowBox[{"ValuesToLetters", " ", "/@", " ", "groups"}]}]}], "\n", 
+         "\t\t", ")"}]}], ";", "\n", "\t\t", "\n", "\t\t", 
+       RowBox[{
+        RowBox[{"MakeChart", "[", 
+         RowBox[{
+         "buckets_", ",", " ", "sortedAlphabet_", ",", " ", "width_"}], "]"}],
+         " ", ":=", " ", 
+        RowBox[{"(", "\n", "\t\t\t", 
+         RowBox[{
+          RowBox[{"labeled", " ", "=", " ", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Labeled", "[", 
+              RowBox[{"#", ",", " ", 
+               RowBox[{"Style", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"ToString", "@", 
+                   RowBox[{"Round", "[", 
+                    RowBox[{
+                    RowBox[{"100.", " ", "*", " ", 
+                    RowBox[{"Total", "@", "#"}]}], ",", " ", "0.01"}], 
+                    "]"}]}], " ", "<>", " ", "\"\<%\>\""}], ",", " ", 
+                 RowBox[{"FontSize", "\[Rule]", "14"}]}], "]"}], ",", " ", 
+               "After"}], "]"}], "&"}], " ", "/@", " ", "buckets"}]}], ";", 
+          "\n", "\t\t\t", 
+          RowBox[{"BarChart", "[", "\n", "\t\t\t", 
+           RowBox[{
+            RowBox[{"Reverse", "@", "labeled"}], ",", "\n", "\t\t\t", 
+            RowBox[{"BarSpacing", "\[Rule]", 
+             RowBox[{"0.2", " ", "*", " ", 
+              RowBox[{"800", " ", "/", " ", "width"}]}]}], ",", "\n", 
+            "\t\t\t", 
+            RowBox[{"BarOrigin", "\[Rule]", "Left"}], ",", "\n", "\t\t\t", 
+            RowBox[{"ChartLayout", "\[Rule]", "\"\<Stacked\>\""}], ",", "\n", 
+            "\t\t\t", 
+            RowBox[{"ChartLabels", "\[Rule]", 
+             RowBox[{"Placed", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{"Style", "[", 
+                  RowBox[{"#", ",", " ", 
+                   RowBox[{"RGBColor", "[", "\"\<#CECECE\>\"", "]"}], ",", 
+                   " ", "12"}], "]"}], "&"}], " ", "/@", " ", 
+                RowBox[{"Flatten", "@", 
+                 RowBox[{"Reverse", "@", 
+                  RowBox[{"Keys", "@", "buckets"}]}]}]}], ",", " ", 
+               "Center"}], "]"}]}], ",", "\n", "\t\t\t", 
+            RowBox[{"ChartStyle", "\[Rule]", "\"\<Rainbow\>\""}], ",", "\n", 
+            "\t\t\t", 
+            RowBox[{"ImageSize", "\[Rule]", "width"}], ",", "\n", "\t\t\t", 
+            RowBox[{"PlotRangePadding", " ", "\[Rule]", " ", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", " ", 
+               RowBox[{
+                RowBox[{"-", "0.25"}], " ", "*", " ", 
+                RowBox[{"width", " ", "/", " ", "800"}]}]}], "}"}]}], ",", 
+            "\n", "\t\t\t", 
+            RowBox[{"PlotLabel", "\[Rule]", 
+             RowBox[{"Row", "[", "\n", "\t\t\t\t", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"Framed", "[", "\n", "\t\t\t\t\t", 
+                 RowBox[{
+                  RowBox[{"Style", "[", 
+                   RowBox[{"#", ",", " ", 
+                    RowBox[{"FontSize", " ", "->", " ", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"width", " ", "/", " ", "800"}], ")"}], " ", "*", 
+                    " ", "24"}]}], ",", " ", "Black", ",", " ", "Bold"}], 
+                   "]"}], ",", "\n", "\t\t\t\t\t\t", 
+                  RowBox[{"FrameMargins", "\[Rule]", "4"}], ",", "\n", 
+                  "\t\t\t\t\t\t", 
+                  RowBox[{"Background", "\[Rule]", "White"}], ",", "\n", 
+                  "\t\t\t\t\t\t", 
+                  RowBox[{"ImageMargins", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", 
+                    RowBox[{"-", "1"}]}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"10", ",", "0"}], "}"}]}], "}"}]}]}], "\n", 
+                 "\t\t\t\t\t", "]"}], "&"}], " ", "/@", " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"StringRiffle", "[", 
+                   RowBox[{"#", ",", " ", "\"\<,\>\""}], "]"}], "&"}], " ", "/@",
+                  " ", "sortedAlphabet"}], ")"}]}], "\n", "\t\t\t\t", 
+              "]"}]}]}], "\n", "\t\t\t", "]"}]}], "\n", "\t\t", ")"}]}], ";", 
+       "\n", "\t\t", "\n", "\t\t", 
+       RowBox[{
+        RowBox[{"ChartGroupsSorted", "[", 
+         RowBox[{"newGroups_", ",", " ", 
+          RowBox[{"width_:", "800"}]}], "]"}], " ", ":=", " ", 
+        RowBox[{"(", "\n", "\t\t\t", 
+         RowBox[{
+          RowBox[{"sortedNewGroups", " ", "=", " ", 
+           RowBox[{"SortLettersByOldAlphabet", "[", "newGroups", "]"}]}], ";",
+           "\n", "\t\t\t", 
+          RowBox[{"sortedAlphabet", " ", "=", " ", 
+           RowBox[{"SortNewAlphabet", "[", "newGroups", "]"}]}], ";", "\n", 
+          "\t\t\t", 
+          RowBox[{"MakeChart", "[", 
+           RowBox[{
+           "sortedNewGroups", ",", " ", "sortedAlphabet", ",", " ", "width"}],
+            "]"}]}], "\n", "\t\t", ")"}]}]}], "\n", "\t", ")"}]}]}], "\n", 
+   "]"}]}]], "Code",
  CellChangeTimes->{
   3.744369394981121*^9, {3.744369551311208*^9, 3.744369567399302*^9}, {
    3.7443696052561207`*^9, 3.744369609400186*^9}, 3.744369717361679*^9, {
@@ -89,48 +327,146 @@ a2c25e74297b\>\"", "]"}], ";", "\n", "\t",
    3.7452566547101507`*^9}, {3.7452567081502*^9, 3.745256862002987*^9}, {
    3.745259283943098*^9, 3.745259293132196*^9}, {3.745259968026846*^9, 
    3.7452600075124397`*^9}, {3.745260223809929*^9, 3.7452603066443987`*^9}, {
-   3.7452603955268908`*^9, 
-   3.745260490799397*^9}},ExpressionUUID->"7dbcf5b2-b4fd-4b89-bda1-\
-2cc71f9c08df"],
+   3.7452603955268908`*^9, 3.745260490799397*^9}, {3.745506351000249*^9, 
+   3.745506457762081*^9}, {3.745506495092819*^9, 3.7455064987152367`*^9}, {
+   3.745506553631686*^9, 3.745506619205533*^9}, {3.745506663996951*^9, 
+   3.745506929045006*^9}, {3.745506996427411*^9, 3.7455070307442513`*^9}, {
+   3.7455071800688467`*^9, 3.745507220379836*^9}},
+ CellLabel->"In[56]:=",ExpressionUUID->"7dbcf5b2-b4fd-4b89-bda1-2cc71f9c08df"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`n$$ = 7, Typeset`show$$ = True, 
+   DynamicModuleBox[{$CellContext`n$$ = 4, Typeset`show$$ = True, 
     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{{
        Hold[$CellContext`n$$], 4, "Number of Tables"}, 2, 10, 1}}, 
-    Typeset`size$$ = {600., {221.634033203125, 227.365966796875}}, 
+    Typeset`size$$ = {600., {211.134033203125, 216.865966796875}}, 
     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    True, $CellContext`n$315588$$ = 0}, 
+    False, $CellContext`n$54168$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, "Variables" :> {$CellContext`n$$ = 4}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`n$$, $CellContext`n$315588$$, 0]}, 
+        Hold[$CellContext`n$$, $CellContext`n$54168$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
         Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
-         Typeset`skipInitDone$$}, 
-      "Body" :> (
-       CloudGet[
-        "https://www.wolframcloud.com/objects/9aa7a737-1854-40df-a787-\
-a2c25e74297b"]; Column[{
-          Style[
-           StringJoin[
-            ToString[$CellContext`n$$], " Tables"], FontSize -> 20, 
-           TextAlignment -> Center, Bold], 
-          $CellContext`chartGroups[
-           $CellContext`makeGroups[$CellContext`n$$], 600]}, Alignment -> 
-         Center]), 
+         Typeset`skipInitDone$$}, "Body" :> Column[{
+         Style[
+          StringJoin[
+           ToString[$CellContext`n$$], " Tables"], FontSize -> 20, 
+          TextAlignment -> Center, Bold], 
+         $CellContext`ChartGroupsSorted[
+          $CellContext`MakeGroups[$CellContext`n$$], 600]}, Alignment -> 
+        Center], 
       "Specifications" :> {{{$CellContext`n$$, 4, "Number of Tables"}, 2, 10, 
          1}}, "Options" :> {LabelStyle -> {FontSize -> 14}}, 
       "DefaultOptions" :> {}],
-     ImageSizeCache->{645., {268., 274.}},
+     ImageSizeCache->{645., {257., 263.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
+    Initialization:>(($CellContext`percents = 
+       Association[
+        "A" -> 0.0379425, "B" -> 0.0850223, "C" -> 0.077475, "D" -> 0.0453413,
+          "E" -> 0.0185658, "F" -> 0.0338085, "G" -> 0.0557632, "H" -> 
+         0.0708041, "I" -> 0.00413011, "J" -> 0.0298697, "K" -> 0.0326326, 
+         "L" -> 0.0491037, "M" -> 0.0963997, "N" -> 0.0190822, "O" -> 
+         0.0152516, "P" -> 0.0498137, "Q" -> 0.00241787, "R" -> 0.0590957, 
+         "S" -> 0.0943162, "T" -> 0.0354322, "U" -> 0.00232247, "V" -> 
+         0.0175313, "W" -> 0.0554885, "X" -> 0.000384696, "Y" -> 0.00634222, 
+         "Z" -> 0.00566274]; $CellContext`percentsInverse = 
+       AssociationThread[
+         Values[$CellContext`percents], 
+         Keys[$CellContext`percents]]; $CellContext`ValuesToLetters[
+         Pattern[$CellContext`list, 
+          Blank[]]] := AssociationThread[
+         Map[$CellContext`percentsInverse[#]& , $CellContext`list], \
+$CellContext`list]; $CellContext`SortNewAlphabet[
+         Pattern[$CellContext`newGroupsN, 
+          Blank[]]] := SortBy[
+         Keys[
+          Map[KeySort, $CellContext`newGroupsN]], 
+         First[#]& ]; $CellContext`SortLettersByOldAlphabet[
+         Pattern[$CellContext`newGroups, 
+          Blank[]]] := SortBy[
+         Map[KeySort, $CellContext`newGroups], First[
+          Keys[#]]& ]; $CellContext`AddOneToSmallestGroup[
+         Pattern[$CellContext`groups, 
+          Blank[]], 
+         Pattern[$CellContext`remaining, 
+          Blank[]]] := ($CellContext`sortedByTotal = Reverse[
+           SortBy[$CellContext`groups, Total[#]& ]]; $CellContext`totals = 
+         Map[Total, $CellContext`sortedByTotal]; $CellContext`nextGreatest = 
+         First[$CellContext`remaining]; $CellContext`next = Append[
+           Most[$CellContext`sortedByTotal], 
+           Append[
+            
+            Last[$CellContext`sortedByTotal], $CellContext`nextGreatest]]; \
+$CellContext`index = First[
+           First[
+            
+            Position[$CellContext`remaining, $CellContext`nextGreatest]]]; \
+$CellContext`stillStanding = 
+         Delete[$CellContext`remaining, $CellContext`index]; \
+{$CellContext`next, $CellContext`stillStanding}); $CellContext`MakeGroups[
+         Pattern[$CellContext`n, 
+          Blank[]]] := ($CellContext`values = Values[
+           Reverse[
+            Sort[$CellContext`percents]]]; $CellContext`groups = Map[List, 
+           Part[$CellContext`values, 
+            Span[1, $CellContext`n]]]; $CellContext`remaining = 
+         Part[$CellContext`values, 
+           Span[$CellContext`n + 1, All]]; 
+        While[Length[$CellContext`remaining] > 
+          0, {$CellContext`groups, $CellContext`remaining} = \
+$CellContext`AddOneToSmallestGroup[$CellContext`groups, \
+$CellContext`remaining]]; $CellContext`letteredGroups = 
+         Map[$CellContext`ValuesToLetters, $CellContext`groups]); \
+$CellContext`MakeChart[
+         Pattern[$CellContext`buckets, 
+          Blank[]], 
+         Pattern[$CellContext`sortedAlphabet, 
+          Blank[]], 
+         Pattern[$CellContext`width, 
+          Blank[]]] := ($CellContext`labeled = Map[Labeled[#, 
+            Style[
+             StringJoin[
+              ToString[
+               Round[100. Total[#], 0.01]], "%"], FontSize -> 14], 
+            After]& , $CellContext`buckets]; BarChart[
+          Reverse[$CellContext`labeled], BarSpacing -> 
+          0.2 (800/$CellContext`width), BarOrigin -> Left, ChartLayout -> 
+          "Stacked", ChartLabels -> Placed[
+            Map[Style[#, 
+              RGBColor["#CECECE"], 12]& , 
+             Flatten[
+              Reverse[
+               Keys[$CellContext`buckets]]]], Center], ChartStyle -> 
+          "Rainbow", ImageSize -> $CellContext`width, 
+          PlotRangePadding -> {0, (-0.25) ($CellContext`width/800)}, 
+          PlotLabel -> Row[
+            Map[Framed[
+              Style[#, FontSize -> ($CellContext`width/800) 24, Black, Bold], 
+              FrameMargins -> 4, Background -> White, 
+              ImageMargins -> {{0, -1}, {10, 0}}]& , 
+             Map[
+             StringRiffle[#, 
+               ","]& , $CellContext`sortedAlphabet]]]]); \
+$CellContext`ChartGroupsSorted[
+         Pattern[$CellContext`newGroups, 
+          Blank[]], 
+         Optional[
+          Pattern[$CellContext`width, 
+           Blank[]], 
+          800]] := ($CellContext`sortedNewGroups = \
+$CellContext`SortLettersByOldAlphabet[$CellContext`newGroups]; \
+$CellContext`sortedAlphabet = \
+$CellContext`SortNewAlphabet[$CellContext`newGroups]; \
+$CellContext`MakeChart[$CellContext`sortedNewGroups, \
+$CellContext`sortedAlphabet, $CellContext`width])); Typeset`initDone$$ = True),
     SynchronousInitialization->True,
     UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
     UnsavedVariables:>{Typeset`initDone$$},
@@ -139,9 +475,12 @@ a2c25e74297b"]; Column[{
    StripOnInput->False],
   Manipulate`InterpretManipulate[1]]], "Output",
  CellChangeTimes->{
-  3.745260318710599*^9, {3.745260426016015*^9, 3.745260447758625*^9}},
- CellLabel->
-  "Out[363]=",ExpressionUUID->"bc74a6b9-7c13-4ed6-9c25-9f4e7eae1a48"]
+  3.7455064592059383`*^9, {3.7455068691809273`*^9, 3.745506879597864*^9}, {
+   3.7455069159648457`*^9, 3.745506929742468*^9}, 3.7455069723316107`*^9, {
+   3.745507003733779*^9, 3.745507031507579*^9}, {3.7455072038771*^9, 
+   3.745507220850195*^9}, {3.7455099726090193`*^9, 3.745509977046736*^9}, 
+   3.745510028389298*^9},
+ CellLabel->"Out[56]=",ExpressionUUID->"ac13a6fd-781c-4b83-9853-31e12716deff"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -151,28 +490,28 @@ Cell[BoxData[
   RowBox[{"alphabetInteractive", ",", " ", 
    RowBox[{"Permissions", "\[Rule]", "\"\<Public\>\""}]}], "]"}]], "Code",
  CellChangeTimes->{{3.7443696590602627`*^9, 3.744369672657915*^9}, 
-   3.7452600142002087`*^9},
- CellLabel->
-  "In[362]:=",ExpressionUUID->"8477bcbf-2551-4dcf-9f2e-84d7f7d34119"],
+   3.7452600142002087`*^9, 3.745507054933178*^9, 3.745510013579561*^9},
+ CellLabel->"In[57]:=",ExpressionUUID->"8477bcbf-2551-4dcf-9f2e-84d7f7d34119"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"CloudObject", "[", 
    TemplateBox[{
-    "\"https://www.wolframcloud.com/objects/d221d7e0-458f-43dd-89d7-\
-55a7e8595ccc\"",
-     "https://www.wolframcloud.com/objects/d221d7e0-458f-43dd-89d7-\
-55a7e8595ccc"},
+    "\"https://www.wolframcloud.com/objects/c4cd3a39-0239-4153-bb07-\
+729cf7d51528\"",
+     "https://www.wolframcloud.com/objects/c4cd3a39-0239-4153-bb07-\
+729cf7d51528"},
     "HyperlinkURL"], "]"}],
   CloudObject[
-  "https://www.wolframcloud.com/objects/d221d7e0-458f-43dd-89d7-55a7e8595ccc"],
+  "https://www.wolframcloud.com/objects/c4cd3a39-0239-4153-bb07-729cf7d51528"],
   SelectWithContents->True]], "Output",
  CellChangeTimes->{
   3.7443696755787687`*^9, 3.744369737090938*^9, 3.745260016139804*^9, {
    3.745260150927999*^9, 3.745260178969179*^9}, 3.745260237684938*^9, 
-   3.745260326226925*^9, 3.745260440864194*^9},
- CellLabel->
-  "Out[362]=",ExpressionUUID->"ccc562bf-b80d-4a54-8672-6deb47b5c0d8"]
+   3.745260326226925*^9, 3.745260440864194*^9, 3.745506347784501*^9, 
+   3.745507056788611*^9, 3.7455072331327963`*^9, 3.745509973471917*^9, 
+   3.745510036373332*^9},
+ CellLabel->"Out[57]=",ExpressionUUID->"0516a151-7d8f-4dc3-b85e-0ba95ad1cef8"]
 }, Open  ]]
 },
 AutoGeneratedPackage->Automatic,
@@ -195,14 +534,14 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[558, 20, 301, 7, 35, "Text",ExpressionUUID->"2dbb94a4-f969-4412-8045-2c02a3c28fae"],
-Cell[862, 29, 366, 8, 52, "Code",ExpressionUUID->"5b698e3b-1d62-4c19-849d-807032042587"],
+Cell[862, 29, 362, 7, 52, "Code",ExpressionUUID->"5b698e3b-1d62-4c19-849d-807032042587"],
 Cell[CellGroupData[{
-Cell[1253, 41, 2342, 52, 224, "Code",ExpressionUUID->"7dbcf5b2-b4fd-4b89-bda1-2cc71f9c08df"],
-Cell[3598, 95, 2193, 48, 561, "Output",ExpressionUUID->"bc74a6b9-7c13-4ed6-9c25-9f4e7eae1a48"]
+Cell[1249, 40, 13812, 294, 1212, "Code",ExpressionUUID->"7dbcf5b2-b4fd-4b89-bda1-2cc71f9c08df"],
+Cell[15064, 336, 6996, 146, 539, "Output",ExpressionUUID->"ac13a6fd-781c-4b83-9853-31e12716deff"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5828, 148, 341, 7, 52, "Code",ExpressionUUID->"8477bcbf-2551-4dcf-9f2e-84d7f7d34119"],
-Cell[6172, 157, 710, 17, 37, "Output",ExpressionUUID->"ccc562bf-b80d-4a54-8672-6deb47b5c0d8"]
+Cell[22097, 487, 381, 6, 52, "Code",ExpressionUUID->"8477bcbf-2551-4dcf-9f2e-84d7f7d34119"],
+Cell[22481, 495, 826, 18, 37, "Output",ExpressionUUID->"0516a151-7d8f-4dc3-b85e-0ba95ad1cef8"]
 }, Open  ]]
 }
 ]

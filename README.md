@@ -5,13 +5,14 @@
 
 ## Notebooks
 + [Get Census Data on Last Names](https://www.wolframcloud.com/objects/9c699cd7-8d35-442c-9e1d-c691585d4b04)
-+ [Optimally Bucket the Existing Alphabet](https://www.wolframcloud.com/objects/313cc0c5-1eb6-4f6b-938b-0b20c929a45d)
-+ [Rearranging the Alphabet](https://www.wolframcloud.com/objects/870893e3-8a89-4f67-ab79-d9ddd3c84900)
-+ [Scratch Pad](https://www.wolframcloud.com/objects/christopher.e.wilson/Published/scratchPadSurnames.nb)
++ [Optimally Bucket the Existing Alphabet](https://www.wolframcloud.com/objects/04878bbb-67fc-41ab-8a31-12f50b1b5254)
 
-## Embed
-+ [Code Sample 1](https://www.wolframcloud.com/objects/christopher.e.wilson/Published/codeSample1.nb)
-+ [Code Sample 1](https://www.wolframcloud.com/objects/7498fc1a-3c95-4193-8ac1-40678dad4d34)
++ [Rearranging the Alphabet](https://www.wolframcloud.com/objects/870893e3-8a89-4f67-ab79-d9ddd3c84900)
++ [Scratch Pad](https://www.wolframcloud.com/objects/246bab51-8f9f-42ca-bbf3-f301bc4ac6d1)
+
+## Embeds
++ [Embeds/visualizeLines.nb](https://www.wolframcloud.com/objects/efe7fd9f-dc80-4935-8967-83816c0c62ec)
++ [Embeds/optimizeAlphabet.nb](https://www.wolframcloud.com/objects/4b5be63f-3d40-452e-a7c0-2309f477c932)
 
 
 ## Packages
